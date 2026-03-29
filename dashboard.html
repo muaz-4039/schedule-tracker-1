@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Schedule Tracker | Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="home-page">
+    <main class="home-shell">
+        <section class="home-card">
+            <div class="home-topbar">
+                <div>
+                    <p class="eyebrow">Dashboard</p>
+                    <h1 id="welcomeText">Welcome</h1>
+                    <p id="userDetails" class="card-copy"></p>
+                </div>
+                <button type="button" class="secondary-button" onclick="logout()">Logout</button>
+            </div>
+
+            <section class="schedule-panel">
+                <div class="section-heading">
+                    <div>
+                        <h2>Today's Schedule</h2>
+                        <p id="todayLabel" class="section-copy"></p>
+                    </div>
+                </div>
+
+                <form id="taskForm" class="task-form">
+                    <div class="task-form-grid">
+                        <div>
+                            <label for="taskTitle">Task</label>
+                            <input type="text" id="taskTitle" placeholder="Morning standup" required>
+                        </div>
+                        <div>
+                            <label for="taskTime">Time</label>
+                            <input type="time" id="taskTime" required>
+                        </div>
+                    </div>
+
+                    <label for="taskNotes">Notes</label>
+                    <input type="text" id="taskNotes" placeholder="Optional details">
+
+                    <button type="submit">Add to Today</button>
+                </form>
+
+                <p id="taskMessage" class="status-message" aria-live="polite"></p>
+
+                <section class="progress-panel">
+                    <div class="progress-header">
+                        <div>
+                            <h3>Daily Progress</h3>
+                            <p id="progressSummary" class="section-copy">No tasks added yet.</p>
+                        </div>
+                        <span id="productivityBadge" class="productivity-badge neutral">Waiting for tasks</span>
+                    </div>
+
+                    <div class="progress-track" aria-hidden="true">
+                        <div id="progressBar" class="progress-bar"></div>
+                    </div>
+
+                    <div class="progress-stats">
+                        <div class="stat-card">
+                            <span class="stat-label">Completed</span>
+                            <strong id="doneCount">0</strong>
+                        </div>
+                        <div class="stat-card">
+                            <span class="stat-label">Missed</span>
+                            <strong id="missedCount">0</strong>
+                        </div>
+                        <div class="stat-card">
+                            <span class="stat-label">Pending</span>
+                            <strong id="pendingCount">0</strong>
+                        </div>
+                        <div class="stat-card">
+                            <span class="stat-label">Progress</span>
+                            <strong id="progressPercent">0%</strong>
+                        </div>
+                    </div>
+                </section>
+
+                <div id="scheduleList" class="schedule-list"></div>
+            </section>
+
+            <section class="schedule-panel history-panel">
+                <div class="section-heading">
+                    <div>
+                        <h2>Previous Schedule History</h2>
+                        <p class="section-copy">Your saved schedule stays available for at least the last 365 days.</p>
+                    </div>
+                </div>
+
+                <div id="historyList" class="history-list"></div>
+            </section>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
