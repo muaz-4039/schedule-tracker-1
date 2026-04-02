@@ -53,6 +53,7 @@ body {
 .home-card {
     border-radius: 28px;
     box-shadow: var(--shadow);
+    font-style: italic;
 }
 
 .brand-panel {
