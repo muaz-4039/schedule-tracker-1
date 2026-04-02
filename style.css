@@ -70,6 +70,7 @@ body {
     padding: 40px 36px;
     background: var(--card-bg);
     backdrop-filter: blur(10px);
+    font-style: italic;
 }
 
 .eyebrow,
